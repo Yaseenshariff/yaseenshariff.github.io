@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SpanishFootballLeague.Models.MatchesDto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AwayTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeTeamGoals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AwayTeamGoals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MatchDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamWon)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeTeam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AwayTeam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeTeamGoals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AwayTeamGoals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatchDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamWon)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

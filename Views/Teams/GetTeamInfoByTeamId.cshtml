@@ -1,0 +1,60 @@
+﻿@model SpanishFootballLeague.Models.TeamHistoryDto
+
+@{
+    ViewBag.Title = "GetTeamInfoByTeamId";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div>
+        <div class="square">
+            @{
+                var base64 = Convert.ToBase64String(Model.TeamImage);
+                var imgsrc = string.Format("data:image/png;base64,{0}", base64);
+            }
+            <img src='@imgsrc' style="width:1100px;height:500px;" />
+        </div>
+        <label class="teamName">@Model.TeamName</label>
+        <label class="teamName">( @Model.TeamShortName )</label>
+
+        <h3>@Model.TeamName History :</h3>
+        <div class="form-group">
+            <label>Total Matches Played : @Model.Played</label>
+        </div>
+
+        <div class="form-control">
+            <label>Total Matches Won : @Model.Won</label>
+        </div>
+
+
+
+    </div>
+
+<style type="text/css">
+    body {
+        width: 1140px;
+        margin-left: 280px;
+        background-color:grey;
+    }
+
+    .teamName {
+        display: block;
+        text-align: center;
+        line-height: 150%;
+        font-size: 30px;
+    }
+    h3{
+        font-size:25px;
+    }
+    /*.square {
+        height: 700px;
+        width: 700px;
+        background-color: grey;
+        float: left;
+        margin-left: 10px;
+        margin-top: 15px;
+        border: 1px solid grey;
+        text-align: center;
+        color: black;
+    }*/
+</style>

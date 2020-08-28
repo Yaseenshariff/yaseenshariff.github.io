@@ -1,0 +1,160 @@
+﻿@model SpanishFootballLeague.Models.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <img src="~/Images/Loginview9.png" class="backgroundImage" />
+        <img class="userProfile" src="~/Images/img_avatar.png" alt="Login" />
+        <div class="loginContent">
+            <h2 class="LoginText">Login</h2>
+
+            <div class="inner-addon left-addon">
+                <label class="labels">User Name :</label>
+                <div>
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="userName" class="text-line" required placeholder="Enter User Name"
+                           oninvalid="this.setCustomValidity('Enter User Name')" oninput="this.setCustomValidity('')" />
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <div class="inner-addon left-addon">
+                <label class="labels">Password :</label>
+                <div>
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="password" class="text-line" required placeholder="Enter Password"
+                           oninvalid="this.setCustomValidity('Enter Password')" oninput="this.setCustomValidity('')" />
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <div>
+                <i class="fa fa-sign-in"></i>
+                <input type="submit" value="LOGIN" class="button" />
+            </div>
+
+            <br />
+            @if (!string.IsNullOrWhiteSpace(@ViewBag.InvalidAttempt))
+            {
+                <label class="error">Invalid Login request</label>
+            }
+        </div>
+
+    }
+</body>
+</html>
+
+<style type="text/css">
+
+    .error {
+        color: red;
+        margin-left: 130px;
+        font-size: 20px;
+    }
+
+    .fa-sign-in {
+        position: absolute;
+        margin-left: 90px;
+        font-size: 25px;
+        margin-top: 7px;
+    }
+
+    .labels {
+        position: absolute;
+        margin: auto;
+        margin-left: 130px;
+        font-size: 20px;
+        color: darkturquoise;
+    }
+
+    .LoginText {
+        text-align: center;
+        margin-top: 63px;
+        color: darkturquoise;
+    }
+
+    .button {
+        background-color: darkturquoise;
+        width: 300px;
+        height: 40px;
+        margin-left: 60px;
+        font-size: 17px;
+        /*border-radius: 30%;*/
+    }
+
+    .loginContent {
+        height: 430px;
+        width: 400px;
+        border: 1px solid black;
+        margin: auto;
+        margin-top: 150px;
+    }
+
+    .userProfile {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        position: absolute;
+        margin-left: 800px;
+        top: 100px;
+        border-radius: 50%
+    }
+
+    .fa-user {
+        margin-top: 35px;
+        margin-left: 80px;
+        position: absolute;
+        font-size: x-large;
+    }
+
+    .fa-key {
+        margin-top: 35px;
+        margin-left: 80px;
+        position: absolute;
+        font-size: x-large;
+    }
+
+    .text-line {
+        background-color: transparent;
+        color: white;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid black 1px;
+        padding: 3px 10px;
+        margin-left: 80px;
+        font-size: 20px;
+        margin-top: 35px;
+        padding-left: 25px;
+    }
+
+    .backgroundImage {
+        background-image: url("/SpanishFootballLeague/Images/Loginview9.png");
+        background-repeat: no-repeat;
+        min-height: 100%;
+        min-width: 100%;
+        background-size: cover;
+    }
+</style>

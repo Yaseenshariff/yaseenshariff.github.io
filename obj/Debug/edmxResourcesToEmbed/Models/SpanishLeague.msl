@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Football_PremierLeagueModelStoreContainer" CdmEntityContainer="Football_PremierLeagueEntities">
+    <EntitySetMapping Name="PremierLeague_History">
+      <EntityTypeMapping TypeName="Football_PremierLeagueModel.PremierLeague_History">
+        <MappingFragment StoreEntitySet="PremierLeague_History">
+          <ScalarProperty Name="TeamImage" ColumnName="TeamImage" />
+          <ScalarProperty Name="HistoryId" ColumnName="HistoryId" />
+          <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="TeamShortName" ColumnName="TeamShortName" />
+          <ScalarProperty Name="Played" ColumnName="Played" />
+          <ScalarProperty Name="Won" ColumnName="Won" />
+          <ScalarProperty Name="Drawn" ColumnName="Drawn" />
+          <ScalarProperty Name="Lost" ColumnName="Lost" />
+          <ScalarProperty Name="GoalsForward" ColumnName="GoalsForward" />
+          <ScalarProperty Name="GoalsAgainst" ColumnName="GoalsAgainst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PremierLeague_MatchFixtures">
+      <EntityTypeMapping TypeName="Football_PremierLeagueModel.PremierLeague_MatchFixtures">
+        <MappingFragment StoreEntitySet="PremierLeague_MatchFixtures">
+          <ScalarProperty Name="AwayTeamImage" ColumnName="AwayTeamImage" />
+          <ScalarProperty Name="HomeTeamImage" ColumnName="HomeTeamImage" />
+          <ScalarProperty Name="MatchId" ColumnName="MatchId" />
+          <ScalarProperty Name="HomeTeam" ColumnName="HomeTeam" />
+          <ScalarProperty Name="AwayTeam" ColumnName="AwayTeam" />
+          <ScalarProperty Name="HomeTeamGoals" ColumnName="HomeTeamGoals" />
+          <ScalarProperty Name="AwayTeamGoals" ColumnName="AwayTeamGoals" />
+          <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TeamWon" ColumnName="TeamWon" />
+          <ScalarProperty Name="Metric_DateTimeCreated" ColumnName="Metric_DateTimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PremierLeague_Standings">
+      <EntityTypeMapping TypeName="Football_PremierLeagueModel.PremierLeague_Standings">
+        <MappingFragment StoreEntitySet="PremierLeague_Standings">
+          <ScalarProperty Name="TeamImage" ColumnName="TeamImage" />
+          <ScalarProperty Name="StandingsId" ColumnName="StandingsId" />
+          <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+          <ScalarProperty Name="Played" ColumnName="Played" />
+          <ScalarProperty Name="Won" ColumnName="Won" />
+          <ScalarProperty Name="Drawn" ColumnName="Drawn" />
+          <ScalarProperty Name="Lost" ColumnName="Lost" />
+          <ScalarProperty Name="GoalsForward" ColumnName="GoalsForward" />
+          <ScalarProperty Name="GoalsAgainst" ColumnName="GoalsAgainst" />
+          <ScalarProperty Name="GoalDifference" ColumnName="GoalDifference" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Metric_DateTimeCreated" ColumnName="Metric_DateTimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PremierLeague_Teams">
+      <EntityTypeMapping TypeName="Football_PremierLeagueModel.PremierLeague_Teams">
+        <MappingFragment StoreEntitySet="PremierLeague_Teams">
+          <ScalarProperty Name="TeamImage" ColumnName="TeamImage" />
+          <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="TeamShortName" ColumnName="TeamShortName" />
+          <ScalarProperty Name="Metric_DateTimeCreated" ColumnName="Metric_DateTimeCreated" />
+          <ScalarProperty Name="Disable" ColumnName="Disable" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Football_PremierLeagueModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+          <ScalarProperty Name="Disable" ColumnName="Disable" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Metric_DateTimeCreated" ColumnName="Metric_DateTimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

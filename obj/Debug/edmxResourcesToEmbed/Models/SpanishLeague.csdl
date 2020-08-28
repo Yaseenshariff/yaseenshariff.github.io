@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Football_PremierLeagueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PremierLeague_History">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" />
+    <Property Name="TeamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TeamShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Played" Type="Int32" />
+    <Property Name="Won" Type="Int32" />
+    <Property Name="Drawn" Type="Int32" />
+    <Property Name="Lost" Type="Int32" />
+    <Property Name="GoalsForward" Type="Int32" />
+    <Property Name="GoalsAgainst" Type="Int32" />
+    <NavigationProperty Name="PremierLeague_Teams" Relationship="Football_PremierLeagueModel.FK__PremierLe__TeamI__47DBAE45" FromRole="PremierLeague_History" ToRole="PremierLeague_Teams" />
+    <Property Name="TeamImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PremierLeague_MatchFixtures">
+    <Key>
+      <PropertyRef Name="MatchId" />
+    </Key>
+    <Property Name="MatchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeTeam" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AwayTeam" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HomeTeamGoals" Type="Int32" />
+    <Property Name="AwayTeamGoals" Type="Int32" />
+    <Property Name="MatchDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TeamWon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Metric_DateTimeCreated" Type="DateTime" Precision="3" />
+    <Property Name="HomeTeamImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="AwayTeamImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PremierLeague_Standings">
+    <Key>
+      <PropertyRef Name="StandingsId" />
+    </Key>
+    <Property Name="StandingsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="Played" Type="Int32" Nullable="false" />
+    <Property Name="Won" Type="Int32" Nullable="false" />
+    <Property Name="Drawn" Type="Int32" Nullable="false" />
+    <Property Name="Lost" Type="Int32" Nullable="false" />
+    <Property Name="GoalsForward" Type="Int32" />
+    <Property Name="GoalsAgainst" Type="Int32" />
+    <Property Name="GoalDifference" Type="Int32" />
+    <Property Name="Points" Type="Int32" />
+    <Property Name="Metric_DateTimeCreated" Type="DateTime" Precision="3" />
+    <Property Name="TeamImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PremierLeague_Teams">
+    <Key>
+      <PropertyRef Name="TeamId" />
+    </Key>
+    <Property Name="TeamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TeamShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Metric_DateTimeCreated" Type="DateTime" Precision="3" />
+    <Property Name="Disable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Group" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TeamImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="PremierLeague_History" Relationship="Football_PremierLeagueModel.FK__PremierLe__TeamI__47DBAE45" FromRole="PremierLeague_Teams" ToRole="PremierLeague_History" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserGroup" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedByID" Type="Int32" />
+    <Property Name="DateLastUpdated" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="Disable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Metric_DateTimeCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="Football_PremierLeagueEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PremierLeague_History" EntityType="Self.PremierLeague_History" />
+    <EntitySet Name="PremierLeague_MatchFixtures" EntityType="Self.PremierLeague_MatchFixtures" />
+    <EntitySet Name="PremierLeague_Standings" EntityType="Self.PremierLeague_Standings" />
+    <EntitySet Name="PremierLeague_Teams" EntityType="Self.PremierLeague_Teams" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__PremierLe__TeamI__47DBAE45" Association="Football_PremierLeagueModel.FK__PremierLe__TeamI__47DBAE45">
+      <End Role="PremierLeague_Teams" EntitySet="PremierLeague_Teams" />
+      <End Role="PremierLeague_History" EntitySet="PremierLeague_History" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__PremierLe__TeamI__47DBAE45">
+    <End Type="Football_PremierLeagueModel.PremierLeague_Teams" Role="PremierLeague_Teams" Multiplicity="0..1" />
+    <End Type="Football_PremierLeagueModel.PremierLeague_History" Role="PremierLeague_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PremierLeague_Teams">
+        <PropertyRef Name="TeamId" />
+      </Principal>
+      <Dependent Role="PremierLeague_History">
+        <PropertyRef Name="TeamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6713859ac1904d9fa6cbf665739eb3ab" Name="Diagram1">
+        <EntityTypeShape EntityType="Football_PremierLeagueModel.PremierLeague_History" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Football_PremierLeagueModel.PremierLeague_MatchFixtures" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Football_PremierLeagueModel.PremierLeague_Standings" Width="2.375" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Football_PremierLeagueModel.PremierLeague_Teams" Width="2.375" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Football_PremierLeagueModel.User" Width="1.5" PointX="4.375" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="Football_PremierLeagueModel.FK__PremierLe__TeamI__47DBAE45" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
